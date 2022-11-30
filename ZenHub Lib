@@ -1,10 +1,16 @@
+pcall(function()
+   game.CoreGui:FindFirstChild("NOOBHUB"):Destroy()
+end)
+
+_G.ColorUILol = Color3.fromRGB(0, 170, 255)
+
 local lib = {RainbowColorValue = 0, HueSelectionPosition = 0}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
-local PresetColor = Color3.fromRGB(44, 120, 224)
+local PresetColor = _G.ColorUILol
 local CloseBind = Enum.KeyCode.RightControl
 
 local knixhub = Instance.new("ScreenGui")
@@ -87,7 +93,7 @@ end
 
 function lib:Window(text, preset, closebind)
 CloseBind = closebind or Enum.KeyCode.RightControl
-PresetColor = preset or Color3.fromRGB(44, 120, 224)
+PresetColor = preset or _G.ColorUILol
 fs = false
 local Main = Instance.new("Frame")
 local TabHold = Instance.new("Frame")
@@ -111,7 +117,7 @@ Main.Visible = false
 WindowStroke.Name = "WindowStroke"
     WindowStroke.Parent = Main
     WindowStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-    WindowStroke.Color = Color3.fromRGB(255,255,255)
+    WindowStroke.Color = _G.ColorUILol
     WindowStroke.LineJoinMode = Enum.LineJoinMode.Round
     WindowStroke.Thickness = 1
     WindowStroke.Transparency = 0
@@ -219,7 +225,7 @@ LoadTitle.BackgroundTransparency = 1.000
 LoadTitle.Position = UDim2.new(0.0432743616, 0, 0.1125011, 0)
 LoadTitle.Size = UDim2.new(0, 200, 0, 23)
 LoadTitle.Font = Enum.Font.GothamSemibold
-LoadTitle.Text = "ZEN HUB"
+LoadTitle.Text = "PCALL HUB"
 LoadTitle.TextColor3 = Color3.fromRGB(68, 68, 68)
 LoadTitle.TextSize = 12.000
 LoadTitle.TextXAlignment = Enum.TextXAlignment.Left
@@ -248,7 +254,7 @@ TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 wait(.6)
 
 Barload:TweenSize(UDim2.new(0, 50,0, 2), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .3, true)
-LoadText.Text = "Getting Data..."
+LoadText.Text = "Getting Data"
 
 wait(1)
 
@@ -258,7 +264,7 @@ LoadText.Text = "Hello " ..game.Players.LocalPlayer.DisplayName.. " From: ".. co
 wait(1)
 
 Barload:TweenSize(UDim2.new(0, 150,0, 2), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .3, true)
-LoadText.Text =  "Your Device is Mobile"
+LoadText.Text =  "Checking UI"
 
 wait(1)
 
@@ -273,7 +279,7 @@ LoadText.Text = "Game Support"
 wait(1)
 
 Barload:TweenSize(UDim2.new(0, 300,0, 2), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .3, true)
-LoadText.Text = "Getting ready.."
+LoadText.Text = "Getting Ready"
 
 wait(1)
 
@@ -677,7 +683,7 @@ FrameToggle2Corner.Parent = FrameToggle2
 
 FrameToggle3.Name = "FrameToggle3"
 FrameToggle3.Parent = FrameToggle1
-FrameToggle3.BackgroundColor3 = PresetColor
+FrameToggle3.BackgroundColor3 = _G.ColorUILol
 FrameToggle3.BackgroundTransparency = 1.000
 FrameToggle3.Size = UDim2.new(0, 37, 0, 18)
 
@@ -696,7 +702,7 @@ FrameToggleCircleCorner.Parent = FrameToggleCircle
 coroutine.wrap(
 function()
 while wait() do
-FrameToggle3.BackgroundColor3 = PresetColor  
+FrameToggle3.BackgroundColor3 = _G.ColorUILol
 end
 end
 )()
@@ -854,13 +860,13 @@ SlideFrame.Size = UDim2.new(0, 335, 0, 3)
 
 CurrentValueFrame.Name = "CurrentValueFrame"
 CurrentValueFrame.Parent = SlideFrame
-CurrentValueFrame.BackgroundColor3 = PresetColor
+CurrentValueFrame.BackgroundColor3 = _G.ColorUILol
 CurrentValueFrame.BorderSizePixel = 0
 CurrentValueFrame.Size = UDim2.new((start or 0) / max, 0, 0, 3)
 
 SlideCircle.Name = "SlideCircle"
 SlideCircle.Parent = SlideFrame
-SlideCircle.BackgroundColor3 = PresetColor
+SlideCircle.BackgroundColor3 = _G.ColorUILol
 SlideCircle.BackgroundTransparency = 1.000
 SlideCircle.Position = UDim2.new((start or 0)/max, -6,-1.30499995, 0)
 SlideCircle.Size = UDim2.new(0, 11, 0, 11)
@@ -870,8 +876,8 @@ SlideCircle.ImageColor3 = PresetColor
 coroutine.wrap(
 function()
 while wait() do
-CurrentValueFrame.BackgroundColor3 = PresetColor
-SlideCircle.ImageColor3 = PresetColor
+CurrentValueFrame.BackgroundColor3 = _G.ColorUILol
+SlideCircle.ImageColor3 = _G.ColorUILol
 end
 end
 )()
