@@ -1,39 +1,37 @@
--- BLACKTRAP V1.2 FIXED_BUILD --
--- REALEASE DATE ON 25/02/2022 --
--- MADE By WANZ --
--- DO NOT COPYRIGHT --
--- (WINDOWS AND MOBILE VERSION) --
+pcall(function()
+  game.CoreGui:FindFirstChild("Pcall"):Destroy()
+end)
 
--- service --
+-- Service --
 local Blacklib = {}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 
--- init --
+-- Init --
 local LocalizationService = game:GetService("LocalizationService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 local NameID = LocalPlayer.Name
 
--- themes --
+-- Themes --
 _G.WindowBackgroundColor = Color3.fromRGB(12, 12, 12)
 _G.BackgroundItemColor = Color3.fromRGB(20, 20, 20)
 _G.TabWindowColor = Color3.fromRGB(30, 30, 30)
 _G.ContainerColor = Color3.fromRGB(30, 30, 30)
-_G.TitleTextColor = Color3.fromRGB(255, 255, 255)
+_G.TitleTextColor = Color3.fromRGB(0, 170, 255)
 _G.ImageColor = Color3.fromRGB(255, 255, 255)
-_G.LineThemeColor = Color3.fromRGB(255, 255, 255)
-_G.TabTextColor = Color3.fromRGB(255, 255, 255)
-_G.TabImageColor = Color3.fromRGB(255, 255, 255)
-_G.TabThemeColor = Color3.fromRGB(255, 255, 255)
-_G.SectionColor = Color3.fromRGB(255, 255, 255)
+_G.LineThemeColor = Color3.fromRGB(0, 170, 255)
+_G.TabTextColor = Color3.fromRGB(0, 170, 255)
+_G.TabImageColor = Color3.fromRGB(0, 170, 255)
+_G.TabThemeColor = Color3.fromRGB(0, 170, 255)
+_G.SectionColor = Color3.fromRGB(0, 170, 255)
 _G.SectionImageColor = Color3.fromRGB(255, 255, 255)
-_G.SectionTextColor = Color3.fromRGB(255, 255, 255)
-_G.SectionOn = Color3.fromRGB(0, 250, 0)
+_G.SectionTextColor = Color3.fromRGB(0, 170, 255)
+_G.SectionOn = Color3.fromRGB(0, 170, 255)
 
 -- Windows --
-function Blacklib:Window(gametitle)
+function Blacklib:Window(title, gametitle)
     local osfunc = {}
     local osfunc2 = {}
     local titlefunc = {}    
@@ -204,7 +202,7 @@ function Blacklib:Window(gametitle)
     PlaLab.Position = UDim2.new(0, 3, 0, 353)
     PlaLab.Size = UDim2.new(0, 150, 0, 25)
     PlaLab.Font = Enum.Font.Code
-    PlaLab.Text = "Zen Hub"
+    PlaLab.Text = title
     PlaLab.TextSize = 13.000
     PlaLab.TextColor3 = Color3.fromRGB(255, 255, 255)
     PlaLab.TextXAlignment = Enum.TextXAlignment.Center
@@ -389,7 +387,7 @@ function Blacklib:Window(gametitle)
     end)
     spawn(function()
         while task.wait() do
-            titlefunc:Refresh("") wait(.2) titlefunc:Refresh("Z") wait(.2) titlefunc:Refresh("Ze") wait(.2) titlefunc:Refresh("Zen") wait(.2) titlefunc:Refresh("Zen ") wait(.2) titlefunc:Refresh("Zen H") wait(.2) titlefunc:Refresh("Zen Hu") wait(.2) titlefunc:Refresh("Zen Hub") wait(.2) titlefunc:Refresh("Zen Hu") wait(.2) titlefunc:Refresh("Zen H") wait(.9) titlefunc:Refresh("Zen ") wait(.2) titlefunc:Refresh("Ze") wait(.2) titlefunc:Refresh("Z") wait(.2) titlefunc:Refresh("") wait(.2) wait(.3)
+            titlefunc:Refresh("") wait(.4) titlefunc:Refresh(title) wait(.4)
         end
     end)
     -- End Windows --
